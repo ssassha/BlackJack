@@ -79,7 +79,7 @@ public class Controller {
             playerPoints.setText(String.valueOf(game.getPlayerPoints()));
             rank = game.getPlayerCardList().get(k - 1).getRank();
             suit = game.getPlayerCardList().get(k - 1).getSuit().toString().toLowerCase();
-            input = new FileInputStream("build\\resources\\main\\cards\\" + rank + "_of_" + suit + ".png");
+            input = new FileInputStream("src\\main\\resources\\com\\example\\blackjack\\cards\\" + rank + "_of_" + suit + ".png");
             image = new Image(input);
             switch (k) {
                 case (3):
@@ -113,7 +113,7 @@ public class Controller {
                 dealerPoints.setText(String.valueOf(game.getDealerPoints()));
                 rank = game.getDealerCardList().get(k - 1).getRank();
                 suit = game.getDealerCardList().get(k - 1).getSuit().toString().toLowerCase();
-                input = new FileInputStream("build\\resources\\main\\cards\\" + rank + "_of_" + suit + ".png");
+                input = new FileInputStream("src\\main\\resources\\com\\example\\blackjack\\cards\\" + rank + "_of_" + suit + ".png");
                 image = new Image(input);
                 switch (k) {
                     case (3):
@@ -161,7 +161,7 @@ public class Controller {
             for (int i = 0; i < game.getDealerCardList().size(); i++) {
                 rank = game.getDealerCardList().get(i).getRank();
                 suit = game.getDealerCardList().get(i).getSuit().toString().toLowerCase();
-                input = new FileInputStream("build\\resources\\main\\cards\\" + rank + "_of_" + suit + ".png");
+                input = new FileInputStream("src\\main\\resources\\com\\example\\blackjack\\cards\\" + rank + "_of_" + suit + ".png");
                 image = new Image(input);
                 if (i == 0) dealerCard1.setImage(image);
                 else dealerCard2.setImage(image);
@@ -170,7 +170,7 @@ public class Controller {
             for (int i = 0; i < game.getPlayerCardList().size(); i++) {
                 rank = game.getPlayerCardList().get(i).getRank();
                 suit = game.getPlayerCardList().get(i).getSuit().toString().toLowerCase();
-                input = new FileInputStream("build\\resources\\main\\cards\\" + rank + "_of_" + suit + ".png");
+                input = new FileInputStream("src\\main\\resources\\com\\example\\blackjack\\cards\\" + rank + "_of_" + suit + ".png");
                 image = new Image(input);
                 if (i == 0) playerCard1.setImage(image);
                 else playerCard2.setImage(image);

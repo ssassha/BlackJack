@@ -13,7 +13,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        FileInputStream input = new FileInputStream("build\\resources\\main\\logo.png");
+        FileInputStream input = new FileInputStream("src\\main\\resources\\com\\example\\blackjack\\logo.png");
         Image image = new Image(input);
         stage.getIcons().add(image);
         stage.setTitle("Blackjack");
