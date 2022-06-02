@@ -67,7 +67,7 @@ public class Controller {
     @FXML
     void hit() throws FileNotFoundException {
         if (isGameEnd) {
-            current.setText("The game ended!");
+            current.setText("The game is over!");
         } else {
             String currentHit = game.hit();
             int k = game.getPlayerCardList().size();
@@ -99,14 +99,13 @@ public class Controller {
                     playerCard6.setImage(image);
                     break;
             }
-            k++;
         }
     }
 
     @FXML
     void stand() throws FileNotFoundException {
         if (isGameEnd) {
-            current.setText("The game ended!");
+            current.setText("The game is over!");
         } else {
             int k = 3;
             while (game.getDealerPoints() < 17) {
@@ -145,7 +144,7 @@ public class Controller {
     @FXML
     void startGame() throws FileNotFoundException {
         if (isGameOn) {
-            current.setText("The game started!");
+            current.setText("The game has already started!");
         }
         else {
             isGameOn = true;

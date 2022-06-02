@@ -1,7 +1,6 @@
 package com.example.blackjack;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Game {
     Deck deck = new Deck();
@@ -27,10 +26,7 @@ public class Game {
             deck = new Deck();
         }
         player.hit(deck);
-        if (player.getPoints() == 21) {
-
-            return blackjack();
-        }
+        if (player.getPoints() == 21) return blackjack();
         if (player.getPoints() > 21) return lose();
         return "Hit or stand?";
     }

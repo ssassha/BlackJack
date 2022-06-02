@@ -1,7 +1,5 @@
 package com.example.blackjack;
 
-import java.util.concurrent.TimeUnit;
-
 public class Dealer {
     private Hand hand = new Hand();
     private int points;

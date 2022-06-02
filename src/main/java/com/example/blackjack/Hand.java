@@ -3,8 +3,7 @@ package com.example.blackjack;
 import java.util.ArrayList;
 
 public class Hand {
-    private ArrayList<Card> currentCards = new ArrayList<>();
-    private int points;
+    private final ArrayList<Card> currentCards = new ArrayList<>();
 
     public Hand() {}
 
@@ -13,9 +12,9 @@ public class Hand {
     }
 
     public int scoring() {
-        points = 0;
-        for (int i = 0; i < currentCards.size(); i++) {
-            points += currentCards.get(i).getValue();
+        int points = 0;
+        for (Card currentCard : currentCards) {
+            points += currentCard.getValue();
         }
         return points;
     }
