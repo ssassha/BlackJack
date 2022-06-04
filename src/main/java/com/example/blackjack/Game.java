@@ -6,6 +6,7 @@ public class Game {
     Deck deck = new Deck();
     Player player = new Player();
     Dealer dealer = new Dealer();
+    int currentBet;
 
     public Game() {
     }
@@ -32,23 +33,31 @@ public class Game {
     }
 
     public String stand() {
+        if (player.getPoints() == 21) return blackjack();
         if (dealer.getPoints() == 21) return lose();
         if (dealer.getPoints() > 21) return win();
         if (dealer.getPoints() > player.getPoints()) return lose();
         if (dealer.getPoints() < player.getPoints()) return win();
-        return "Stay!";
+        return stay();
     }
 
     public String blackjack() {
+        player.won(currentBet);
         return "Blackjack!";
     }
 
     public String win() {
+        player.won(currentBet);
         return "You won!";
     }
 
     public String lose() {
+        player.lost(currentBet);
         return "You lost!";
+    }
+
+    public String stay() {
+        return "Stay";
     }
 
     public int getPlayerPoints() {
@@ -63,6 +72,10 @@ public class Game {
         return dealer;
     }
 
+    public int getPlayerBalance() {
+        return player.getBalance();
+    }
+
     public Deck getDeck() {
         return deck;
     }
@@ -73,5 +86,9 @@ public class Game {
 
     public ArrayList<Card> getDealerCardList() {
         return dealer.getHand().getCurrentCards();
+    }
+
+    public void setCurrentBet(int currentBet) {
+        this.currentBet = currentBet;
     }
 }

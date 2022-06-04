@@ -13,8 +13,14 @@ public class Hand {
 
     public int scoring() {
         int points = 0;
+        int aces = 0;
         for (Card currentCard : currentCards) {
-            points += currentCard.getValue();
+        points += currentCard.getValue();
+        if (currentCard.getRank() == 14) aces++;
+        }
+        while (aces != 0) {
+            if (points + 10 <= 21) points += 10;
+            aces--;
         }
         return points;
     }
